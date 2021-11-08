@@ -12,8 +12,8 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 plainwhite:
-  name: Adam Denisov
-  tagline: Developer. Designer
+  name: Suuny
+  tagline: Developer. Scientist
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
@@ -26,14 +26,14 @@ plainwhite:
     - post
   # generate social links in footer
   social_links:
-    twitter: samarsault
-    github:  samarsault
-    linkedIn: in/samarsault
+    # twitter: parkeunseon
+    github:  parkeunseon
+    # linkedIn: in/samarsault
     #dribbble: jekyll
     #flickr:   jekyll
-    #instagram: jekyll
-    #pinterest: jekyll
-    #youtube: jekyll
+    # instagram: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
     #facebook: jekyll
     #soundcloud: jekyll
     #telegram: jekyll
