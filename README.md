@@ -1,59 +1,45 @@
-# jekyll-ttskch-theme
+# Leonids Gatsby starter
 
-A simple and customizable theme for Jekyll.
+**[Leonids](http://renyuanz.github.io/leonids)** is a clean, fixed sidebar Gatsby starter which is perfect for powering your GitHub hosted blog.
 
-> This theme was renamed from _jekyll-**qck**-theme_ to _jekyll-**tch**-theme_ at 2016.06.02.  
-> And renamed again from _jekyll-**tch**-theme_ to _jekyll-**ttskch**-theme_ at 2016.09.23.
+### Preview
 
-## Screen shot
+![theme-preview](./content/assets/theme-preview.gif)
 
-![image](https://cloud.githubusercontent.com/assets/4360663/18776176/62611b38-81a2-11e6-875b-86a66aa8f15c.png)
+## What is Leonids?
 
-## Features
+A blazing fast static blog theme built on Gatsby.js
 
-* A lot of Markdown features (also GitHub Flavored Markdown)
-* `:emoji:` ready :+1:
-* Easy color-scheme customization
-* Tags list page
-* Monthly Archives page
-* Search feature without any Jekyll plugins
-* `<!--more-->` tag feature
-* Anchor links for each headings
-* Sticky side nav
-* Responsive
-* OGP ready
-* Share buttons ready
+![lighthouse-performance](./content/assets/lighthouse-performance.png)
 
-## Getting started
+- Responsive templates. Looking good on any viewport.
+- Fixed sidebar to provide a good navigation experience while reading.
+- Light/Dark mode.
+- **And** the Leonids (/ˈliːənɪdz/ lee-ə-nidz) are a prolific meteor shower associated with the comet [Tempel-Tuttle](https://en.wikipedia.org/wiki/55P/Tempel%E2%80%93Tuttle).
 
-1. [Fork me](https://github.com/ttskch/jekyll-ttskch-theme/fork)
-2. Rename the repository from `jekyll-ttskch-theme` to `{username}.github.io` ([learn more](https://pages.github.com/))
-3. Modify `_config.yml`
-4. Modify `_sass/base/_variables.scss` if you need to change colors or font sizes
-5. Add new posts into `_posts/` :smiley:
+See a [demo](http://renyuanz.github.io/leonids/) hosted on GitHub pages.
 
-## Demo
+## Getting Started (Recommended)
 
-You can see live demo at below:
+### Vercel.com deploy button
 
-* https://ttskch.github.io/jekyll-ttskch-theme/
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Frenyuanz%2Fleonids)
 
-## Thanks for using :wink:
+### Netlify CMS deploy button
 
-* http://ttskch.github.io
-* http://sitaramshelke.github.io
-* http://jffourmond.github.io
-* http://vbflash8.github.io
-* http://luqitao.github.io
-* http://harusametime.github.io
-* http://gitzxon.github.io
-* http://hutsonlu.github.io
-* http://k0-1.github.io
-* http://anthonygore.github.io
-* http://getjsdojo.github.io
-* http://georgezhuo.github.io
-* http://neontapir.github.io
-* https://sasukeh.github.io
-* https://blog.guilhermegarnier.com
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/renyuanz/leonids&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
-Please PR if you want to add your blog.
+## Local development setup
+
+```
+gatsby new my-blog https://github.com/renyuanz/leonids
+cd my-blog
+gatsby develop
+```
+
+Check out your awesome blog at `http://localhost:8000` and Cheers!
+
+
+## Legacy Jekyll theme
+
+This project was a Jekyll blog theme, which is archived and not maintained any more. You can still find the source code in [leonids-jekyll](https://github.com/renyuanz/leonids/tree/leonids-jekyll) branch.
