@@ -1,5 +1,5 @@
 ---
-title: "Getting started with the Documentation Theme for Jekyll"
+title: "Sunny's blog"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: mydoc_sidebar
@@ -175,8 +175,8 @@ The sidebar data file uses a specific YAML syntax that you must follow. Follow t
 ```yaml
 entries:
 - title: sidebar
-  product: Jekyll Doc Theme
-  version: 6.0
+  product: Study Lecord
+  version: 0.1
   folders:
   - title: Overview
     output: web, pdf
