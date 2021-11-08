@@ -1,48 +1,108 @@
----
----
+$(function () {
+    var query = getQuery(["q", "t", "a", "d"]);
 
-window.onload = function () {
-    var $searchbar = document.getElementById('searchbar');
-    var $searchResults = document.getElementById('search-results');
+    var targets;
+    switch (query.key) {
+        case "t":
+            targets = ["tags"];
+            break;
+        case "a":
+            targets = ["author"];
+            break;
+        case "d":
+            targets = ["date"];
+            break;
+        case "q":
+        default:
+            targets = ["title", "tags", "author", "url", "date", "content"];
+            break;
+    }
+    showPosts(query.words, targets);
 
-    if (!$searchbar || !$searchResults)
-        return;
+    if (query.key == "q") {
+        $("#search").val(query.query).focus();
+    }
+});
 
-    SimpleJekyllSearch({
-        searchInput: $searchbar,
-        resultsContainer: $searchResults,
-        json: '{{ "/search.json" | relative_url }}',
-        searchResultTemplate: '<a href="{url}" target="_blank">{title}</a>',
-        noResultsText: ''
+function getQuery(keys)
+{
+    var query = "";
+    var key = "";
+    var words = [];
+
+    keys.forEach(function (queryKey) {
+        var regex = RegExp("[?&]" + queryKey + "=([^&]+)", 'i');
+        var matched;
+        if (matched = window.location.search.match(regex)) {
+            query = decodeURIComponent(matched[1]).replace(/(　| |\+)+/g, ' ');
+            words = query.split(' ');
+            key = queryKey;
+            return false;  // break;
+        }
+        return true;  // continue;
     });
 
-    /* hack ios safari unfocus */
-    if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))
-        document.body.firstElementChild.tabIndex = 1;
-
-    var $labelGroup = document.querySelector(".posts-labelgroup");
-    var $postLabel = document.getElementById("posts-label");
-    var labelWidth = $postLabel.scrollWidth;
-
-    $postLabel.style.width = labelWidth + "px";
-
-    $labelGroup.addEventListener("click", function (e) {
-        $searchResults.style.display = null;
-        $postLabel.style.width = "0";
-        $labelGroup.setAttribute("class", "posts-labelgroup focus-within");
-        $searchbar.focus();
-        e.stopPropagation();
-    }, false);
-
-    $labelGroup.addEventListener("mouseleave", function () {
-        document.body.onclick = searchCollapse;
-    });
-
-    var searchCollapse = function (e) {
-        $searchResults.style.display = "none";
-        $labelGroup.setAttribute("class", "posts-labelgroup");
-        $postLabel.style.width = labelWidth + "px";
-        document.body.onclick = null;
-    };
+    return { query: query, key: key, words: words };
 }
 
+function showPosts(words, targets)
+{
+    var getJson = function () {
+
+        var dfd = $.Deferred();
+        $.ajax({
+            url: baseurl + "/search.json",
+            dataType: "json",
+            timeout: 3000,  // 3 sec
+            success: function (posts) {
+                var matchedPosts = [];
+                posts.forEach(function (post) {
+
+                    // concatenate target fields as a string.
+                    var searchee = "";
+                    for (var i = 0; i < targets.length; i++) {
+                        var target = post[targets[i]];
+                        var targetString = "";
+                        if (target instanceof Array) {
+                            for (var j = 0; j < target.length; j++) {
+                                targetString += target[j];
+                            }
+                        } else if (typeof target == "object") {
+                            for (key in target) {
+                                targetString += target[key];
+                            }
+                        } else {
+                            targetString = target;
+                        }
+                        searchee += targetString;
+                    }
+
+                    // matching.
+                    var matched = true;
+                    words.forEach(function (word) {
+                        var regex = new RegExp(word, 'i');
+                        if (searchee.match(regex) == null) {
+                            matched = false;
+                            return false;  // break;
+                        }
+                        return true;  // continue;
+                    });
+
+                    if (matched) {
+                        matchedPosts.push(post);
+                    }
+                });
+
+                dfd.resolve(matchedPosts);
+            }
+        });
+
+        return dfd.promise();
+    };
+
+    getJson().then(function (matchedPosts) {
+        matchedPosts.forEach(function (post) {
+            $("#search-results").find("#" + post.id).show();
+        });
+    });
+}

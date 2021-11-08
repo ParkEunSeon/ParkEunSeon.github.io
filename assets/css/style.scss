@@ -1,13 +1,13 @@
 ---
 ---
 
-@import "plain";
-
-{% if site.plainwhite.search %}
-  @import "search";
-{% endif %}
-
-{%- if site.plainwhite.dark_mode -%}
-  @import "toggle";
-  @import "dark";
-{%- endif -%}
+@import 'base/_reset';
+@import 'base/_syntax';
+@import 'base/_variables';
+@import 'base/_layout';
+@import 'base/_utilities';
+@import '_common';
+@import '_header';
+@import '_footer';
+@import '_aside';
+@import '_content';
