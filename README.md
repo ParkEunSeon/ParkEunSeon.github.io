@@ -1,45 +1,126 @@
-# Leonids Gatsby starter
+# BlackDoc
 
-**[Leonids](http://renyuanz.github.io/leonids)** is a clean, fixed sidebar Gatsby starter which is perfect for powering your GitHub hosted blog.
+![Jekyll version](https://img.shields.io/badge/Jekyll-3.x-brightgreen.svg?style=flat-square)
 
-### Preview
+BlackDoc is a two-column [Jekyll](http://jekyllrb.com) theme that's ideal for websites that require a master-detail layout for viewing of content. It's based on [Poole](http://getpoole.com), the Jekyll butler, and the [Hyde](http://hyde.getpoole.com) theme.
 
-![theme-preview](./content/assets/theme-preview.gif)
+![BlackDoc screenshot](https://raw.githubusercontent.com/karloespiritu/blackdoc/master/public/images/blackdoc-screenshot.jpg)
 
-## What is Leonids?
+## Contents
 
-A blazing fast static blog theme built on Gatsby.js
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Options](#options)
+  - [Sidebar menu](#sidebar-menu)
+  - [Scrolling sidebar content](#scrolling-sidebar-content)
+  - [Themes](#themes)
+  - [Reverse layout](#reverse-layout)
+- [Development](#development)
+- [Author](#author)
+- [License](#license)
+- [Thanks](#thanks)
 
-![lighthouse-performance](./content/assets/lighthouse-performance.png)
+## Features
 
-- Responsive templates. Looking good on any viewport.
-- Fixed sidebar to provide a good navigation experience while reading.
-- Light/Dark mode.
-- **And** the Leonids (/ˈliːənɪdz/ lee-ə-nidz) are a prolific meteor shower associated with the comet [Tempel-Tuttle](https://en.wikipedia.org/wiki/55P/Tempel%E2%80%93Tuttle).
+* Now compatible with Jekyll 3.x
+* Two-column layout with scrolling sidebar content
+* Ideal for websites that require  master-detail view of content
 
-See a [demo](http://renyuanz.github.io/leonids/) hosted on GitHub pages.
+## Quick Start
 
-## Getting Started (Recommended)
+Download the zip file or clone the BlackDoc repo.
 
-### Vercel.com deploy button
+```bash
+$ git clone git@github.com:karloespiritu/BlackDoc.git mysite
+$ cd mysite
+```
+Make sure you have Ruby 2.2.5 or higher installed.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Frenyuanz%2Fleonids)
+```bash
+$ ruby --version
+ruby 2.2.5
+```
 
-### Netlify CMS deploy button
+Install bundler and install dependencies.
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/renyuanz/leonids&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+```bash
+$ gem install bundler
+$ bundle install
+```
 
-## Local development setup
+Build and run your BlackDoc site.
+
+```bash
+$ jekyll serve
+```
+
+## Usage
+
+BlackDoc is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+
+
+## Options
+
+BlackDoc includes some customizable options, typically applied via classes on the `<body>` element.
+
+
+### Sidebar menu
+
+Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
 
 ```
-gatsby new my-blog https://github.com/renyuanz/leonids
-cd my-blog
-gatsby develop
+---
+layout: page
+title: About
+---
 ```
 
-Check out your awesome blog at `http://localhost:8000` and Cheers!
+**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
 
 
-## Legacy Jekyll theme
+### Scrolling sidebar content
 
-This project was a Jekyll blog theme, which is archived and not maintained any more. You can still find the source code in [leonids-jekyll](https://github.com/renyuanz/leonids/tree/leonids-jekyll) branch.
+By default, BlackDoc includes a scrolling sidebar that will display your markdown files in alphabetical order.
+
+### Themes
+
+BlackDoc ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
+
+To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
+
+```html
+<body class="theme-base-08">
+  ...
+</body>
+```
+
+To create your own theme, look to the Themes section of [included CSS file](https://github.com/karloespiritu/blackdoc/blob/master/public/css/blackdoc.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
+
+### Reverse layout
+
+![BlackDoc reverse screenshot](https://raw.githubusercontent.com/karloespiritu/BlackDoc/master/public/images/reverse-screenshot.png)
+
+BlackDoc's page orientation can be reversed with a single class.
+
+```html
+<body class="layout-reverse">
+  ...
+</body>
+```
+
+## Author
+
+**Karlo Espiritu**
+- <https://github.com/karloespiritu>
+- <https://twitter.com/karloespiritu>
+
+## License
+
+Open sourced under the [MIT license](LICENSE.md).
+
+\m/
+
+## Thanks
+
+Thanks to [@mdo](https://twitter.com/mdo) for creating the awesome [Poole](http://getpoole.com) project.
