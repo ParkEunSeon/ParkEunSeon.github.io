@@ -3,7 +3,7 @@ title: "Sunny's blog"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: mydoc_sidebar
-# permalink: index.html
+permalink: index.html
 summary: [PBL기반 금융빅데이터 분석가 과정] This is a blog where I organize what I have learned while taking the course.
 ---
 
@@ -87,7 +87,7 @@ git push -u origin main
 
 위의 내용을 통하여 우리는 버전관리를 하게 된다.
 위 내용은 github 홈페이지에서 확인할 수 있다.
-<pre>
+<!-- <pre>
 ---
 title: Alerts
 tags: [formatting]
@@ -97,7 +97,7 @@ summary: "You can insert notes, tips, warnings, and important alerts in your con
 <span class="red">sidebar: mydoc_sidebar</span>
 permalink: mydoc_alerts
 ---
-</pre>
+</pre> -->
 
 The `sidebar: mydoc_sidebar` refers to the \_data/sidebars/mydoc_sidebar.yml file.
 
