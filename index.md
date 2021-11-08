@@ -99,14 +99,14 @@ permalink: mydoc_alerts
 ---
 </pre> -->
 
-The `sidebar: mydoc_sidebar` refers to the \_data/sidebars/mydoc_sidebar.yml file.
+<!-- The `sidebar: mydoc_sidebar` refers to the \_data/sidebars/mydoc_sidebar.yml file.
 
 Note that your sidebar can only have 2 levels (expand the **Tag archives** option to see an example of the second level). Given that each product has its own sidebar, this depth should be sufficient (it's really like 3 levels). Deeper nesting goes against usability recommendations.
 
 You can optionally turn off the sidebar on any page (e.g. landing pages). To turn off the sidebar for a page, you should set the page frontmatter tag as `hide_sidebar: true`.
 
-If you don't declare a sidebar, the `home_sidebar` file gets used as the default because this is the default specified in the config file:
-
+If you don't declare a sidebar, the `home_sidebar` file gets used as the default because this is the default specified in the config file: -->
+<!-- 
 ```yaml
 -
   scope:
@@ -405,6 +405,6 @@ If you want to use an automated system for managing links, see [Automated Links]
 
 ## Other instructions
 
-The content here is just a getting started guide only. For other details in working with the theme, see the various sections in the sidebar.
+The content here is just a getting started guide only. For other details in working with the theme, see the various sections in the sidebar. -->
 
 {% include links.html %}
