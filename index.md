@@ -3,94 +3,90 @@ title: "Sunny's blog"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: mydoc_sidebar
-permalink: index.html
-summary: These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.
+# permalink: index.html
+summary: [PBL기반 금융빅데이터 분석가 과정] This is a blog where I organize what I have learned while taking the course.
 ---
 
 {% include note.html content="If you're cloning this theme, you're probably writing documentation of some kind. I have a blog on technical writing here called <a alt='technical writing blog' href='http://idratherbewriting.com'>I'd Rather Be Writing</a>. If you'd like to stay updated with the latest trends, best practices, and other methods for writing documentation, consider <a href='https://tinyletter.com/tomjoht'>subscribing</a>. I also have a site on <a href='http://idratherbewriting.com/learnapidoc'>writing API documentation</a>." %}
 
-## Build the Theme
+## smooth communication
 
-Follow these instructions to build the theme.
+원활한 수업진행을 위한 프로그램 설치 및 설정
 
-### 1. Download the theme
+### 1. Chrome setting and remote desktop
 
-First, download or clone the theme from the [Github repo](https://github.com/tomjoht/documentation-theme-jekyll). Most likely you won't be pulling in updates once you start customizing the theme, so downloading the theme (instead of cloning it) probably makes the most sense. In Github, click the **Clone or download** button, and then click **Download ZIP**.
+크롬을 기본 브라우저로 설정하고 **크롬 원격 데스크톱**을 설치한다. 위 과정은 원활한 수업진행을 위해 공통된 브라우저를 사용하고 해결하기 어려운 경우 원격 데스크톱을 이용해 빠른 해결을 하기 위함이다.
 
-### 2. Install Jekyll
+### 2. Slack download and participation
 
-If you've never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll:
+Slack을 이용해 파일을 공유할 수 있고, 전하고자하는 내용을 채팅으로 대화하기 위함이다.
 
-* [Install Jekyll on Mac][mydoc_install_jekyll_on_mac]
-* [Install Jekyll on Windows][mydoc_install_jekyll_on_windows]
+## Creating a blog using github
 
-### 3. Install Bundler
+수업을 통해 배운 내용을 블로그에 작성함으로써 하루에 배운 내용 및 중요한 내용을 정리한다:
 
-In case you haven't installed Bundler, install it:
+### 1. git Download
 
-```
-gem install bundler
-```
+형상관리(버전관리)를 하기 위해서 git을 활용해서 버전관리를 한다.
 
-You'll want [Bundler](http://bundler.io/) to make sure all the Ruby gems needed work well with your project. Bundler sorts out dependencies and installs missing gems or matches up gems with the right versions based on gem dependencies.
+### 2. Visual studio code Download
 
-### 4. Option 1: Build the Theme (*without* the github-pages gem) {#option1}
+개발Tool로서 Visual studio code를 다운로드 한다.
+웹기반의 에디터 프로그램으로 가볍고 강력(확장프로그램 다수 보유)하여 해당 개발Tool을 사용한다.
 
-Use this option if you're not planning to publish your Jekyll site using [Github Pages](https://pages.github.com/).
+## Version management
 
-Bundler's Gemfile specifies how project dependencies are managed. Although this project includes a Gemfile, this theme doesn't have any dependencies beyond core Jekyll. The Gemfile is used to list gems needed for publishing on Github Pages. **If you're not planning to have Github Pages build your Jekyll project, delete these two files from the theme's root directory:**
+cmd창을 이용해 로컬의 파일을 서버에 올리는 작업을 한다.
 
-* Gemfile
-* Gemfile.lock
+### 1. 기본 cmd 명령어 사용하기
 
-If you've never run Jekyll on your computer (you can check with `jekyll --version`), you may need to install the jekyll gem:
+#### 1. 작업소스를 관리하는 폴더 만들기
 
-```
-gem install jekyll
-```
-
-Now run jekyll serve (first change directories (`cd`) to where you downloaded the project):
-
-```
-jekyll serve
+작업소스를 관리하기 위한 폴더를 생성한다.
+폴더위치 및 폴더명은 다음과 같다. **C:\apps\git_test**
+위의 폴더에 apps 폴더 및 git_test 폴더를 생성하려면 cmd에서 실행해야하는 명령어는 아래와 같다.
+```javascript
+  cd /
+  mkdir apps
+  cd apps
+  mkdir git_test && cd git_test
 ```
 
-### 4. Option 2: Build the Theme (*with* the github-pages gem) {#option2}
+해당 폴더를 git 버전관리를 위한 폴더로 지정하려면 **git init** 을 cmd창에 실행하면 된다.
 
-If you *are* in fact publishing on Github Pages, leave the Gemfile and Gemfile.lock files in the theme.The Gemfile tells Jekyll to use the github-pages gem. **However, note that you cannot use the normal `jekyll serve` command with this gem due to dependency conflicts between the latest version of Jekyll and Github Pages** (which are noted [briefly here](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)).
+#### 2. git hub 회원가입 및 로컬과 연결하기
 
-You need Bundler to resolve these dependency conflicts. Use Bundler to install all the needed Ruby gems:
+github 홈페이지로 들어가서 회원가입을 한다.
+회원가입을 한 후 new repository를 클릭해 repository의 이름을 설정한다.
+repository명과 로컬의 작업폴더명을 동일하게 설정해두었다.
+repository를 생성했다면 cmd 창에서 아래의 명령어를 실행한다.
 
+```javascript
+git remote add origin https://github.com/UserName/workplaceName.git
+git branch -M main
+git push -u origin main
 ```
-bundle update
+
+위의 두줄은 딱 한번만 실행하는 코드지만 맨 아래의 명령어는 로컬에서 수정이 생겨서 
+서버에 반영하고자 하는 경우에 계속 실행하는 명령어로서 자연스럽게 외우게 될 것이다.
+
+#### 3. 로컬에서 수정한 소스를 서버에 반영하는 방법
+
+우리는 소스를 Visual studio code를 통해 생성 및 수정할 것이다.
+생성 및 수정한 파일을 서버에 올리고자 한다면 다음과 같은 명령어를 cmd창에서 실행시켜주면 된다.
+
+```javascript
+git add .
+git commit -m "수정한 내용"
+git push -u origin main
 ```
 
-Then *always* use this command to build Jekyll:
+**git add .**은 생성/수정/삭제된 소스에 한해서만 status에 올리겠다는 뜻이다.
+**git commit -m "수정한 내용"** 은 commit하겠다는 뜻이다.
+**git push -u origin main**은 main branch에 넣겠다는 뜻이다.(서버반영)
 
-```
-bundle exec jekyll serve
-```
-
-If you want to shorten this long command, you can put this code in a file such as jekyll.sh (on a Mac) and then simply type `. jekyll.sh` to build Jekyll.
-
-## Running the site in Docker
-
-You can also use Docker to directly build and run the site on your local machine. Just clone the repo and run the following from your working dir:
-```
-docker-compose build --no-cache && docker-compose up
-```
-The site should now be running at [http://localhost:4000/](http://localhost:4000/).
-
-This is perhaps the easiest way to see how your site would actually look.
-
-## Configure the sidebar
-
-There are several products in this theme. Each product uses a different sidebar. This is the essence of what makes this theme unique -- different sidebars for different product documentation. The idea is that when users are reading documentation for a specific product, the sidebar navigation should be specific to that product. (You can read more of my thoughts on why multiple sidebars are important in this [blog post](http://idratherbewriting.com/2016/03/23/release-of-documentation-theme-for-jekyll-50/).)
-
-The top navigation usually remains the same, because it allows users to navigate across products. But the sidebar navigation adapts to the product.
-
-In each page's frontmatter, you must specify the sidebar you want that page to use. Here's an example of the page frontmatter showing the sidebar property:
-
+위의 내용을 통하여 우리는 버전관리를 하게 된다.
+위 내용은 github 홈페이지에서 확인할 수 있다.
 <pre>
 ---
 title: Alerts
@@ -242,8 +238,8 @@ Each level must have at least one topic before the next level starts. You can't 
 ```yaml
 entries:
 - title: sidebar
-  product: Jekyll Doc Theme
-  version: 6.0
+  product: Sunny's Study Lecord Blog
+  version: 0.1
   folders:
   - title: Overview
     output: web, pdf
