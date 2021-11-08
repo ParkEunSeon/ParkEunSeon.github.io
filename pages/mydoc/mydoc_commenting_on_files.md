@@ -20,10 +20,7 @@ Here's the code for that button on the page.html layout for GitHub:
 
 
 ```
-{% raw %}{% if site.github_editme_path %}
-
-<a target="_blank" rel="noopener" href="https://github.com/{{site.github_editme_path}}/{{page.folder}}{{page.url | append: ".md"}}{% endif %}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
-
+{% raw %}
 {% endif %}{% endraw %}
 ```
 
@@ -31,16 +28,12 @@ and here for GitLab:
 
 
 ```
-{% raw %}{% if site.gitlab_editme_path %}
+{% raw %}
 
 <a target="_blank" rel="noopener" href="https://github.com/{{site.gitlab_editme_path}}/{{page.folder}}{{page.url | append: ".md"}}{% endif %}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-gitlab fa-lg"></i> Edit me</a>
 
 {% endif %}{% endraw %}
 ```
-
-In your configuration file, edit the value for `github_editme_path` (or for Gitlab: `gitlab_editme_path`). For example, you might create a branch called "reviews" on your Github repo. Then you would add something like this in your configuration file for the 'github_editme_path': tomjoht/documentation-theme-jekyll/edit/reviews. Here "tomjoht" is my github account name. The repo name is "documentation-theme-jekyll". The "reviews" name is the branch.
-
-To suppress this button, comment out the `github_editme_path` in the \_config.yml file.
 
 ## Add reviewers as collaborators
 
