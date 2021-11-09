@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "파이썬 기본 문법 정리1"
+title:  "파이썬 특장점"
 date:   2021-11-09 21:38:00 +0700
 categories: [python]
 ---
