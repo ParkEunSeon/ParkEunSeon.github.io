@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "파이썬 print"
+date:   2021-11-11 18:54:00 +0700
+categories: [python]
+---
+
+# Print 문
+
+### 사용법 정리
+
+##### >> print("문장", end = '')
+
+```python
+print("추첨된 로또 번호 ==> ", end = '')
+lotto.sort()
+for i in range(0,6):
+  print(f"{lotto[i]}", end= ' ')
+```
+
+설명 : print("문장")만 쓰는 경우 다음 print문은 다음 라인에 출력된다.
+
+하지만 print("문장", end ='')이렇게 쓰는 경우 다음 print문은 다음 라인이 아닌 같은 라인에 출력된다.
+
+print(리스트[i], end = ' ') 이런식으로 쓰는 경우 리스트가 하나씩 출력될때마다 공백을 두고 출력하게 된다.
