@@ -2,7 +2,7 @@
 layout: post
 title:  "사이킷런 분류 알고리즘"
 date:   2021-11-22 18:00:00 +0700
-categories: [MerchineLearning]
+categories: [merchinelearning]
 ---
 
 

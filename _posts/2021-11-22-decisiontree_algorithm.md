@@ -2,7 +2,7 @@
 layout: post
 title:  "사이킷런 분류 알고리즘_Decision Tree Algorithm"
 date:   2021-11-22 19:00:00 +0700
-categories: [MerchineLearning]
+categories: [merchinelearning]
 ---
 
 

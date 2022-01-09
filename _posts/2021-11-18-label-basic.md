@@ -2,7 +2,7 @@
 layout: post
 title:  "파이썬 레이블과 학습 기초"
 date:   2021-11-18 18:54:00 +0700
-categories: [python]
+categories: [merchinelearning]
 ---
 
 #### 1. 레이블과 학습

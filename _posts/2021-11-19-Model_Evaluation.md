@@ -2,7 +2,7 @@
 layout: post
 title:  "사이킷런 머신러닝 평가"
 date:   2021-11-20 18:00:00 +0700
-categories: [MerchineLearning]
+categories: [merchinelearning]
 ---
 
 
