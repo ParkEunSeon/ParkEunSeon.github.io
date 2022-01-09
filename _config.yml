@@ -34,7 +34,7 @@ urls:
     - text: About Me
       url: /about/
     - text: post
-      url: /post/
+      url: /category/python
     - text: My Projects
       url: /projects/
     # - text: XML Feed
